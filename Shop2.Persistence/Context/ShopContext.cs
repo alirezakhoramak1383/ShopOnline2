@@ -5,7 +5,7 @@ using Shop2.Doming.Entities.Users;
 
 namespace Shop2.Persistence.Context
 {
-    public class ShopContext : DbContext
+    public class ShopContext : DbContext 
     {
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
