@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Shop2.Appliction.Interfaces.Context;
 using Shop2.Doming.Entities.Categories;
 using Shop2.Doming.Entities.Products;
 using Shop2.Doming.Entities.Users;
