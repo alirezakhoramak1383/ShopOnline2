@@ -12,11 +12,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Shop2.Common\Shop2.Common.csproj" />
     <ProjectReference Include="..\Shop2.Domin\Shop2.Domin.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Servises\Users\Commands\" />
+    <Folder Include="Servises\Users\Commands\NewFolder\" />
   </ItemGroup>
 
 </Project>

@@ -22,6 +22,5 @@ public class ShopContext : DbContext , IShopContext
     {
         base.OnModelCreating(modelBuilder);
     }
-
 }
 
