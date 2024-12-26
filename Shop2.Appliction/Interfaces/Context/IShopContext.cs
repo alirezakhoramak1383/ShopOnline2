@@ -13,7 +13,7 @@ namespace Shop2.Appliction.Interfaces.Context
          DbSet<Role> Roles { get; set; }
          DbSet<UserInRole> UserInRoles { get; set; }
 
-        int SaveChange(bool accseptAllChangesOnSucsses);
+        int SaveChanges(bool accseptAllChangesOnSucsses);
         int SaveChanges();
         Task<int> SaveChangesAsync(bool accseptAllChangesOnSucsses,CancellationToken cancellationToken=new CancellationToken());
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken());
