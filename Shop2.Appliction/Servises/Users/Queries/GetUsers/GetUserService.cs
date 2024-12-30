@@ -11,7 +11,7 @@ namespace Shop2.Appliction.Servises.Users.Queries.GetUsers
             _ShopContext = ShopContext;
         }
 
-        public List<GetUsersDto> Execute(RequestGetUserDto request)
+        public ReslutGetUserDto Execute(RequestGetUserDto request)
         {
            var users=_ShopContext.Users.AsQueryable();
             if (!string.IsNullOrEmpty(request.SearchKey))
@@ -19,12 +19,17 @@ namespace Shop2.Appliction.Servises.Users.Queries.GetUsers
                 users = users.Where(p => p.FullName.Contains(request.SearchKey) && p.Email.Contains(request.SearchKey));
             }
             int rowCount = 0;
-            return users.ToPaged(request.Page, 20, out rowCount).Select(p=> new GetUsersDto
+            var result= users.ToPaged(request.Page, 20, out rowCount).Select(p=> new GetUsersDto
             {
                 FullName = p.FullName,
                 Email = p.Email,
                 Id = p.Id,
             }).ToList();
+            return new ReslutGetUserDto
+            {
+                Rows = rowCount,
+                Users = result
+            };
         }
     }
 }
